@@ -16,7 +16,7 @@ use App\Http\Controllers\ItemsController;
 |
 */
 
-Route::post('/addAfdeling', [AffoeController::class, 'store']);
+Route::post('/addAfdeling', [App\Http\Controllers\AfdelingenController::class, 'store']);
 
 Route::get('/itemdetection/{s}', [ItemsController::class, 'getItems']);
 Route::get('/itemdetection', [ItemsController::class, 'getTableLength']);
