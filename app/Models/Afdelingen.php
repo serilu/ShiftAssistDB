@@ -14,4 +14,9 @@ class Afdelingen extends Model
         'id',
         'name',
     ];
+
+    public function allPakkettype(){
+        return $this->hasMany('\App\Models\Pakkettype');
+    }
 }
+

@@ -15,7 +15,7 @@ class CreateAfdelingenTable extends Migration
     {
         Schema::create('afdelingen', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name")->unique();
         });
     }
 

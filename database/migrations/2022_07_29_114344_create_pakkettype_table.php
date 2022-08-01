@@ -15,8 +15,13 @@ class CreatePakkettypeTable extends Migration
     {
         Schema::create('pakkettype', function (Blueprint $table) {
             $table->bigIncrements("id");
+            
+            // $table->unsignedBigInteger("afdeling_id");
+            // $table->foreign("afdeling_id");->references("id")->on("afdelingen")->onDelete("cascade");
 
-            $table->unsignedBigInteger("afdeling_id");
+            $table->string("afdeling");
+
+            $table->foreign("afdeling")->references("name")->on("afdelingen")->onDelete("cascade");
 
             $table->string('pakkettype')->unique();
         });
@@ -29,6 +34,9 @@ class CreatePakkettypeTable extends Migration
      */
     public function down()
     {
+        Schema::table('pakkettype', function (Blueprint $table){
+            $table->dropForeign('pakkettype_afdeling_foreign');
+        });
  
         Schema::dropIfExists('pakkettype');
     }
