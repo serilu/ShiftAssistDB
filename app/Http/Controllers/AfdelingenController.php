@@ -42,4 +42,26 @@ class AfdelingenController extends Controller
             'status' => 200,
         ]);
     }
+
+    public function getAfdeling() {
+        $afdelingen = Afdelingen::All();
+        $pakkettype = Pakkettype::All();
+      
+
+        return response()->json([
+            'status' => 200,
+            'afdelingen' => $afdelingen,
+            'pakkettype' => $pakkettype,
+        ]);
+    }
+    public function getPakkettype(Request $request) {
+        $pakkettype = Pakkettype::All()->where("afdeling", $request->afdeling);
+      
+        return response()->json([
+            'status' => 200,
+            'pakkettype' => $pakkettype,
+        ]);
+    }
+
+
 }
