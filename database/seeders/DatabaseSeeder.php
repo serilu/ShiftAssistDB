@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ItemdetectionTableSeeder::class,
-            AfdelingSeeder::class,
         ]);
     }
 }

@@ -46,6 +46,7 @@ class AfdelingenController extends Controller
     public function getAfdeling() {
         $afdelingen = Afdelingen::All();
         $pakkettype = Pakkettype::All();
+
       
 
         return response()->json([
