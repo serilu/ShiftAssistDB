@@ -18,25 +18,31 @@ class AfdelingenController extends Controller
             'name' => $request->name,
         ]);
 
-        $pakkettype = Pakkettype::create([
+        $pakkettype1 = Pakkettype::create([
             'afdeling' => $request->name,
             'pakkettype' => $request->pakketType1,
         ]);
 
-        $pakkettype = Pakkettype::create([
-            'afdeling' => $request->name,
-            'pakkettype' => $request->pakketType2,
-        ]);
+        if ($request->pakkettype2 != "") {
+            $pakkettype2 = Pakkettype::create([
+                'afdeling' => $request->name,
+                'pakkettype' => $request->pakketType2,
+            ]);
+        }
 
-        $pakkettype = Pakkettype::create([
-            'afdeling' => $request->name,
-            'pakkettype' => $request->pakketType3,
-        ]);
+        if ($request->pakkettype3 != "") {
+            $pakkettype3 = Pakkettype::create([
+                'afdeling' => $request->name,
+                'pakkettype' => $request->pakketType3,
+            ]);
+        }
 
-        $pakkettype = Pakkettype::create([
-            'afdeling' => $request->name,
-            'pakkettype' => $request->pakketType4,
-        ]);
+        if ($request->pakkettype4 != "") {
+            $pakkettype4 = Pakkettype::create([
+                'afdeling' => $request->name,
+                'pakkettype' => $request->pakketType4,
+            ]);
+        }
 
         return response()->json([
             'status' => 200,
