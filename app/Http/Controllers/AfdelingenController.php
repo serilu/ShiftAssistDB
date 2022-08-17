@@ -23,21 +23,21 @@ class AfdelingenController extends Controller
             'pakkettype' => $request->pakketType1,
         ]);
 
-        if ($request->pakkettype2 != "") {
+        if ($request->pakketType2 != "") {
             $pakkettype2 = Pakkettype::create([
                 'afdeling' => $request->name,
                 'pakkettype' => $request->pakketType2,
             ]);
         }
 
-        if ($request->pakkettype3 != "") {
+        if ($request->pakketType3 != "") {
             $pakkettype3 = Pakkettype::create([
                 'afdeling' => $request->name,
                 'pakkettype' => $request->pakketType3,
             ]);
         }
 
-        if ($request->pakkettype4 != "") {
+        if ($request->pakketType4 != "") {
             $pakkettype4 = Pakkettype::create([
                 'afdeling' => $request->name,
                 'pakkettype' => $request->pakketType4,
